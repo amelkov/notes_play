@@ -1,0 +1,27 @@
+@(user: models.User)
+
+    @main(user) {
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <table class="table table-striped table-bordered" id="noteTable">
+                    <thead>
+                        <tr>
+                            <th width="200">Date</th>
+                            <th>Note</th>
+                            <th width="55"/>
+                        </tr>
+                    </thead>
+                    <tbody id="noteTableBody">
+                    </tbody>
+                </table>
+                <br>
+                <textarea class="form-control custom-control" id="noteText" rows="3" style="resize : vertical" placeholder="Enter your note"></textarea>
+                <br>
+                <button class="btn btn-success" id="addNote">Add note</button>
+                <input hidden id="selectedNote" />
+                <button class="btn btn-warning" id="editNote">Update note</button>
+                <input hidden id="switcher" value="last" />
+                <button class="btn btn-info" id="switcherNote" style="float: right;">Show all notes</button>
+            </div>
+        </div>
+    }

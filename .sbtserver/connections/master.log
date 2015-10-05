@@ -1,0 +1,13 @@
+New log file opened at Tue Sep 29 16:16:37 MSK 2015 by 8196@AmPC
+Taking next connection to: 58198
+New client attempting to connect on port: 58199-58198
+  Address = /192.168.100.22:58198
+This client on port 58199 has uuid b96a71e8-9b6b-4fc6-a0e3-2517f1052c21 configName activator humanReadableName Activator protocolVersion 3 featureTags Vector()
+Connected Clients: activator-b96a71e8-9b6b-4fc6-a0e3-2517f1052c21
+Taking next connection to: 58198
+Checking to see if clients are empty...
+No non-daemon clients connected after 3 min. Shutting down.
+Server socket thread exiting.
+0 clients open, will close them...
+All client sockets have been closed.
+Closing the 8196@AmPC logs at Tue Sep 29 16:19:39 MSK 2015, goodbye.

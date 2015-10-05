@@ -1,0 +1,44 @@
+@(user: models.User)(content: Html)
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Notes</title>
+        <script src="@routes.Assets.at("javascripts/jquery-2.1.4.min.js")" type="text/javascript"></script>
+        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/bootstrap/bootstrap.min.css")">
+        <script src="@routes.Assets.at("javascripts/bootstrap/bootstrap.min.js")" type="text/javascript"></script>
+        <script type="text/javascript" src="@routes.Assets.at("javascripts/main.js")"></script>
+        <script type="text/javascript" src="@routes.Application.javascriptRoutes()"></script>
+    </head>
+    <body>
+        <header>
+            <nav class="navbar">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="@routes.Notes.index()">Notes</a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    @if(user == null) {
+                        <ul class="nav navbar-nav">
+                            <li><a href="@routes.Application.login()">Log in</a></li>
+                            <li><a href="@routes.Application.join()">Registration</a></li>
+                        </ul>
+                    } else {
+                        <ul class="nav navbar-nav">
+                            <p class="navbar-text">Hello, @user.getUsername!</p>
+                            <li><a href="@routes.Notes.index()">Your notes</a></li>
+                            <li>
+                                <form action="/logout" method="post" id="logoutForm2" class="navbar-form navbar-left">
+                                    <li><a href="@routes.Application.logout()">
+                                        <span class="glyphicon glyphicon-log-out"></span> Log out
+                                    </a></li>
+                                </form>
+                            </li>
+                        </ul>
+                    }
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <div class="container">@content</div>
+    </body>
+</html>
